@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MyFPSController : MonoBehaviour, FPSInput.IPlayerActions
+public class FPSController : MonoBehaviour
 {
     [SerializeField] private bool m_IsWalking;
     [SerializeField] private float m_WalkSpeed;
@@ -23,12 +21,10 @@ public class MyFPSController : MonoBehaviour, FPSInput.IPlayerActions
     private CharacterController m_CharacterController;
     private CollisionFlags m_CollisionFlags;
     private bool m_PreviouslyGrounded;
-    private Vector3 m_OriginalCameraPosition;
     private float m_StepCycle;
     private float m_NextStep;
     private bool m_Jumping;
 
-    [SerializeField]
     private Vector2 m_LookInput;
     private Vector2 m_MoveInput;
 
@@ -37,7 +33,6 @@ public class MyFPSController : MonoBehaviour, FPSInput.IPlayerActions
     {
         m_CharacterController = GetComponent<CharacterController>();
         m_Camera = Camera.main;
-        m_OriginalCameraPosition = m_Camera.transform.localPosition;
         m_StepCycle = 0f;
         m_NextStep = m_StepCycle / 2f;
         m_Jumping = false;
@@ -168,7 +163,7 @@ public class MyFPSController : MonoBehaviour, FPSInput.IPlayerActions
         m_LookInput = context.ReadValue<Vector2>();
     }
 
-    public void OnFire(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)
     {
         if (!m_Jump && context.phase == InputActionPhase.Started)
         {

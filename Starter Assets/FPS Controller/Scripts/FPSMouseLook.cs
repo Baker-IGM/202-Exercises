@@ -11,7 +11,6 @@ public class FPSMouseLook
     public float MaximumX = 90F;
     public bool smooth;
     public float smoothTime = 5f;
-    public bool lockCursor = true;
 
 
     private Quaternion m_CharacterTargetRot;
@@ -30,7 +29,6 @@ public class FPSMouseLook
         float yRot = lookInput.x * XSensitivity;
         float xRot = lookInput.y * YSensitivity;
 
-        Debug.Log(xRot);
         m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
         m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
@@ -48,16 +46,6 @@ public class FPSMouseLook
         {
             character.localRotation = m_CharacterTargetRot;
             camera.localRotation = m_CameraTargetRot;
-        }
-    }
-
-    public void SetCursorLock(bool value)
-    {
-        lockCursor = value;
-        if (!lockCursor)
-        {//we force unlock the cursor if the user disable the cursor locking helper
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
     }
 
