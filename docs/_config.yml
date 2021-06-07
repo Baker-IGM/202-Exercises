@@ -1,11 +1,11 @@
 theme:        jekyll-theme-slate
 
 plugins:
-  - jekyll-sitemap
+  - "jekyll-github-metadata"
 
 title:        IGME 202 Exercises
-description:  For user eabigm
 
 collections:
   exercises:
-    output: false
+    output: true
+    collections_dir: exercises
