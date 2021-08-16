@@ -8,4 +8,3 @@ title:        IGME 202 Exercises
 collections:
   exercises:
     output: true
-    collections_dir: exercises
