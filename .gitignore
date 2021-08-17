@@ -60,3 +60,5 @@ crashlytics-build.properties
 docs/_site/
 
 **/.vsconfig
+
+**/UserSettings/
