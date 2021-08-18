@@ -62,7 +62,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: productName
-    value: Exercise_0
+    value: Demo
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: defaultCursor
@@ -2366,7 +2366,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: webGLCompressionFormat
-    value: 1
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: webGLWasmArithmeticExceptions
