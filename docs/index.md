@@ -1,5 +1,11 @@
 # Exercises
 
-{% for exercise in site.exercises %}
--   [{{ exercise.title }}](<{{ exercise.url  | relative_url }}>)
-{% endfor %}
+-   [Demo](builds/demo/)
+-   [Exercise 02](builds/exercise_2/)
+-   [Exercise 03](builds/exercise_3/)
+-   [Exercise 04](builds/exercise_4/)
+-   [Exercise 05](builds/exercise_5/)
+-   [Exercise 06](builds/exercise_6/)
+-   [Exercise 07](builds/exercise_7/)
+-   [Exercise 08](builds/exercise_8/)
+-   [Exercise 09](builds/exercise_9/)
