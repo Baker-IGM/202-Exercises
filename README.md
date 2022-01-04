@@ -9,3 +9,4 @@
 - Builds go into designated folder in `/docs/builds/`
   - Folders found [here](/docs/builds/)
   - Example Demo's build goes into `/docs/builds/demo/`
+  - This should replace the `index.html` files found in each folder
