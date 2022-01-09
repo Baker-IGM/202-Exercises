@@ -1,6 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+public enum TerrainMode
+{
+    Flat,
+    Ramp,
+    Perlin
+}
 
 // TerrainGeneration class
 // Placed on a terrain game object
@@ -17,29 +25,32 @@ public class TerrainGeneration : MonoBehaviour
     public int resolution = 129;
 	float[,] heightArray;
 
+    [SerializeField]
+    [Tooltip ("The terrain generation mode")]
+    TerrainMode terrainMode;
 
-	void Start () 
-	{
-		myTerrainData = gameObject.GetComponent<TerrainCollider>().terrainData;
-		myTerrainData.size = worldSize;
-		myTerrainData.heightmapResolution = resolution;
+    [SerializeField]
+    [Tooltip ("The to use for Flat Terrain Mode")]
+    float flatValue = 1f;
 
-		heightArray = new float[resolution, resolution];
 
-		// Fill the height array with values!
-		// Uncomment the Ramp and Perlin methods to test them out!
-		Flat(1.0f);
-		//Ramp();
-		//Perlin();
+    void Start()
+    {
+        myTerrainData = gameObject.GetComponent<TerrainCollider>().terrainData;
+        myTerrainData.size = worldSize;
+        myTerrainData.heightmapResolution = resolution;
 
-		// Assign values from heightArray into the terrain object's heightmap
-		myTerrainData.SetHeights (0, 0, heightArray);
-	}
+        DrawTerrain();
+    }
 	
 
 	void Update () 
 	{
-		
+        //  Redraws the terrain when the 'D' key has been pressed
+		if(Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            DrawTerrain();
+        }
 	}
 
 	/// <summary>
@@ -80,4 +91,28 @@ public class TerrainGeneration : MonoBehaviour
 
 
 	}
+
+    void DrawTerrain()
+    {
+        heightArray = new float[resolution, resolution];
+
+        // Fill the height array with values!
+        //  Change the value of terrainMode in the inspector to see different terrrain generation modes
+        switch(terrainMode)
+        {
+            case TerrainMode.Flat:
+                //  Change the value of rampValue in the inspector to see the diffent ramp values
+                Flat(flatValue);
+                break;
+            case TerrainMode.Ramp:
+                Ramp();
+                break;
+            case TerrainMode.Perlin:
+                Perlin();
+                break;
+        }
+
+        // Assign values from heightArray into the terrain object's heightmap
+        myTerrainData.SetHeights(0, 0, heightArray);
+    }
 }
