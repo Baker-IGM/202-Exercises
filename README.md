@@ -1,8 +1,8 @@
 # Exercise-Start
 
-- IGME 202 - 2215
+- IGME 202 - 2221
 - Professor Baker
-- Unity Version - [2020.3.16 LTS](https://unity3d.com/unity/qa/lts-releases?version=2020.3&page=1)
+- Unity Version - [2021.3.6 LTS](https://unity3d.com/unity/qa/lts-releases?version=2021.3&page=1)
 - Player settings
   - Resolution and Presentation
     - WebGL Template = `Default`
@@ -11,4 +11,3 @@
 - Builds go into designated folder in `/docs/builds/`
   - Folders found [here](/docs/builds/)
   - Example Demo's build goes into `/docs/builds/demo/`
-  - This should replace the `index.html` file found in each folder
