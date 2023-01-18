@@ -1,6 +1,6 @@
 # Exercise-Start
 
-- IGME 202 - 2221
+- IGME 202 - 2225
 - Professor Baker
 - Unity Version - [2021.3.6 LTS](https://unity3d.com/unity/qa/lts-releases?version=2021.3&page=1)
 - Player settings
