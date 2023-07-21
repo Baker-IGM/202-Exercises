@@ -1,7 +1,6 @@
 # Exercises
 
 -   [Demo](builds/demo/)
--   [Exercise 01](builds/exercise_1/)
 -   [Exercise 02](builds/exercise_2/)
 -   [Exercise 03](builds/exercise_3/)
 -   [Exercise 04](builds/exercise_4/)
