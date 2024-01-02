@@ -7,6 +7,6 @@
     - WebGL Template = `Default`
   - Publishing Settings
     - Compression Format = `Disabled`
-- Builds go into a designated folder in `/docs/builds/`
-  - Folders found [here](/docs/builds/)
-  - Example Demo's build goes into `/docs/builds/demo/`
+- Builds go into a designated folder in `/docs/`
+  - Folders found [here](/docs/)
+  - Example Demo's build goes into `/docs/demo/`
